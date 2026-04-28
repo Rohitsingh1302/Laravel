@@ -213,4 +213,6 @@ use Illuminate\Support\Facades\App;
 // Route::post('/login', [SessionController::class, 'DataDisplay']);
 Route::view('login', 'StudentForm1'); //student form view call
 use  App\Http\Controllers\StudentForm1;
-Route::post('/submit', [StudentForm1::class, 'StudentForm']); //student form submit route, form m method post krna hoga, taki ye route call ho skke, aur controller m validation code likha hoga, uske baad form submit krne par validation hoke message show kr skta hai.
+Route::post('/submit', [StudentForm1::class, 'StudentForm']); 
+/////////////////////////////////UNIT 6////////////////////////////////////
+
