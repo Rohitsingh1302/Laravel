@@ -18,7 +18,6 @@ class StudentSeeder extends Seeder
             'roll_no' => 20,
             'class' => '10',
         ]);
-
         DB::table('_student')->insert([
             'name' => 'Jane Smith',
             'roll_no' => 22,
