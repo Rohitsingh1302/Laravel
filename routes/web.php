@@ -218,3 +218,6 @@ Route::post('/submit', [StudentForm1::class, 'StudentForm']);
 
 use App\Http\Controllers\StudentdbController;
 Route::get('/addstudent', [StudentdbController::class, 'Addstudents']); //database m record add krne ke liye, controller m function bna kr usme DB facade
+Route::get('/updatestudent', [StudentdbController::class, 'Updatestudents']); //database m record update krne ke liye, controller m function bna kr usme DB facade
+Route::get('/deletestudent', [StudentdbController::class, 'Deletestudents']); //database m record delete krne ke liye, controller m function bna kr usme DB facade
+Route::get('/showstudent', [StudentdbController::class, 'Showstudents']); //database m record show krne ke liye, controller m function bna kr usme DB facade

@@ -30,13 +30,16 @@ class StudentSeeder extends Seeder
             'roll_no' => 19,
             'class' => '11',
         ]);
-        // _student::create([
-        //     'name' => 'Bob Brown',
-        //     'roll_no' => 21,
-        //     'class' => '10',
-        // ]);     MODEL WALA METHOD HAI YEH,,,SEEKHNA HAI MAM SE
 
-        Student::factory()->create();
+        Student::create([
+            'name' => 'Bob Browniiee',
+            'roll_no' => 21,
+            'class' => '10',
+        ]);     //MODEL WALA METHOD HAI YEH,,,SEEKHNA HAI MAM SE
+
+
+
+        Student::factory()->create(); // data sara studentfactory m likha hai ,,yha se bss call kr rhe hai and trminal se pass
 
     }
 }
