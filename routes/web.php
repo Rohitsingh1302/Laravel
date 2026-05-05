@@ -216,3 +216,5 @@ use  App\Http\Controllers\StudentForm1;
 Route::post('/submit', [StudentForm1::class, 'StudentForm']); 
 /////////////////////////////////UNIT 6////////////////////////////////////
 
+use App\Http\Controllers\StudentdbController;
+Route::get('/addstudent', [StudentdbController::class, 'Addstudents']); //database m record add krne ke liye, controller m function bna kr usme DB facade

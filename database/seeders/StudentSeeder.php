@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\Student;
+
 
 class StudentSeeder extends Seeder
 {
@@ -32,7 +34,9 @@ class StudentSeeder extends Seeder
         //     'name' => 'Bob Brown',
         //     'roll_no' => 21,
         //     'class' => '10',
-        // ]);     MODEL WALAMETHOD HAI YEH,,,SEEKHNA HAI MAM SE
+        // ]);     MODEL WALA METHOD HAI YEH,,,SEEKHNA HAI MAM SE
+
+        Student::factory()->create();
 
     }
 }
