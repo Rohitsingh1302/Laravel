@@ -15,6 +15,9 @@ class StudentdbController extends Controller
         //     'class' => '10',
         // ]);   //DB facade method
 
+        // DB::insert("INSERT INTO _student (name, roll_no, class) VALUES ('John Doe', 20, '10')"); //raw query method
+        // return "records added successfully";
+
         Student::create([
             'name' => 'Bob Brown',
             'roll_no' => 21,
@@ -33,7 +36,7 @@ class StudentdbController extends Controller
         ]);   //DB facade method
         return "records updated successfully";
 
-        // DB::update("UPDATE _student SET name = 'John Doe Updated again', roll_no = 20, class = '10' WHERE id = 1"); //query builder method
+        // DB::update("UPDATE _student SET name = 'John Doe Updated again', roll_no = 20, class = '10' WHERE id = 1"); //raw query method
         // return "records updated successfully";
         
         // Student::find(8)->update([
