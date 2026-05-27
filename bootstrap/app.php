@@ -2,9 +2,9 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
-use App\Http\Middleware\AgeCheck; 
-use App\Http\Middleware\CountryCheck;
-return Application::configure(basePath: dirname(__DIR__))
+use App\Http\Middleware\AgeCheck;
+
+return Application::configure(dirname(__DIR()))
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
         commands: __DIR__.'/../routes/console.php',
@@ -12,9 +12,8 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias(['age.check' => AgeCheck::class]);
-       // $middleware->append(CountryCheck::class); globally h
     })
-
     ->withExceptions(function (Exceptions $exceptions): void {
-        //
-    })->create();
+    })
+    ->create();
+    
