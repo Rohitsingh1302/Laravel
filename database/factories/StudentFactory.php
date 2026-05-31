@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Student;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Student>
@@ -14,12 +15,14 @@ class StudentFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    protected $model = Student::class;
+
     public function definition(): array
     {
         return [
-            'name' => 'ROHIT SINGH FACTORY',
-            'roll_no' => 22,
-            'class' => '10',
+            'name' => $this->faker->name(),
+            'roll_no' => $this->faker->unique()->numberBetween(1, 200),
+            'class' => (string) $this->faker->numberBetween(1, 12),
         ];
-    }   
+    }
 }
