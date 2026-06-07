@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\App;
 
 // Route::get('/', function () {
 //     return view('welcome');
-// });    //view call
+// });    //view call    
 
 // Route::get('/', function () {
 //     return "rohit";
@@ -29,8 +29,7 @@ use Illuminate\Support\Facades\App;
 // });  //response call
 // Route::get('/{name}', function ($name) {
 //     return "my name is " . $name;
-// });  //parameter DYNAMIC call  
- 
+// });  //parameter DYNAMIC call   
 
 // Route::get('/{name}', function ($name) {
 //     return view ('Student', ['name' => $name]);
