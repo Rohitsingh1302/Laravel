@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\studentcontroller;
 use App\Http\Controllers\Student2Controller;
 use App\Http\Controllers\ClothesController;
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\App;
 
 // Route::get('/', function () {
@@ -210,13 +211,31 @@ use Illuminate\Support\Facades\App;
 // }); //normally ese display krwa skte hai, controller se next m kra rha hu:
 // use App\Http\Controllers\SessionController;
 // Route::post('/login', [SessionController::class, 'DataDisplay']);
-Route::view('login', 'StudentForm1'); //student form view call
-use  App\Http\Controllers\StudentForm1;
-Route::post('/submit', [StudentForm1::class, 'StudentForm']); 
-/////////////////////////////////UNIT 6////////////////////////////////////
+// Route::view('login', 'StudentForm1'); //student form view call
+// use  App\Http\Controllers\StudentForm1;
+// Route::post('/submit', [StudentForm1::class, 'StudentForm']); 
+// /////////////////////////////////UNIT 6////////////////////////////////////
+// use App\Http\Controllers\StudentdbController;
+// Route::get('/addstudent', [StudentdbController::class, 'Addstudents']); //database m record add krne ke liye, controller m function bna kr usme DB facade
+// Route::get('/updatestudent', [StudentdbController::class, 'Updatestudents']); //database m record update krne ke liye, controller m function bna kr usme DB facade
+// Route::get('/deletestudent', [StudentdbController::class, 'Deletestudents']); //database m record delete krne ke liye, controller m function bna kr usme DB facade
+// Route::get('/showstudent', [StudentdbController::class, 'Showstudents']); //database m record show krne ke liye, controller m function bna kr usme DB facade
 
-use App\Http\Controllers\StudentdbController;
-Route::get('/addstudent', [StudentdbController::class, 'Addstudents']); //database m record add krne ke liye, controller m function bna kr usme DB facade
-Route::get('/updatestudent', [StudentdbController::class, 'Updatestudents']); //database m record update krne ke liye, controller m function bna kr usme DB facade
-Route::get('/deletestudent', [StudentdbController::class, 'Deletestudents']); //database m record delete krne ke liye, controller m function bna kr usme DB facade
-Route::get('/showstudent', [StudentdbController::class, 'Showstudents']); //database m record show krne ke liye, controller m function bna kr usme DB facade
+// Home Route
+Route::get('/', function () {
+    return response()->json([
+        'message' => 'Employee Management System',
+        'endpoints' => [
+            'GET /insert' => 'Insert a new employee',
+            'GET /show' => 'Show all employees',
+            'GET /update/{id}' => 'Update employee salary',
+            'GET /delete/{id}' => 'Delete an employee',
+            'GET /highsalary' => 'Get employees with salary > 50000'
+        ]
+    ]);
+});
+Route::match(['get', 'post'], '/insert', [EmployeeController::class, 'insert']);
+Route::get('/show', [EmployeeController::class, 'show']);
+Route::get('/update/{id}', [EmployeeController::class, 'update']);
+Route::get('/delete/{id}', [EmployeeController::class, 'delete']);
+Route::get('/highsalary', [EmployeeController::class, 'highSalary']);
