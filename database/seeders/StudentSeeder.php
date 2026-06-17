@@ -16,28 +16,12 @@ class StudentSeeder extends Seeder
     public function run(): void
     {
         DB::table('_student')->insert([
-            'name' => 'John Doe',
-            'roll_no' => 20,
-            'class' => '10',
-        ]);
-        DB::table('_student')->insert([
-            'name' => 'Jane Smith',
-            'roll_no' => 22,
-            'class' => '12',
-        ]);
-        DB::table('_student')->insert([
-            'name' => 'Alice Johnson',
-            'roll_no' => 19,
-            'class' => '11',
+            ['name' => 'John Doe', 'roll_no' => 20, 'class' => '10'],
+            ['name' => 'Jane Smith', 'roll_no' => 22, 'class' => '12'],
+            ['name' => 'Alice Johnson', 'roll_no' => 19, 'class' => '11'],
+            ['name' => 'Bob Browniiee', 'roll_no' => 21, 'class' => '10'],
         ]);
 
-        Student::create([
-            'name' => 'Bob Browniiee',
-            'roll_no' => 21,
-            'class' => '10',
-        ]); 
-
-        Student::factory()->create(); // data sara studentfactory m likha hai ,,yha se bss call kr rhe hai and trminal se pass
- 
+        Student::factory()->create();
     }
 }
